@@ -231,6 +231,8 @@ document.querySelectorAll('.slider-wrapper').forEach((slider) => {
 
 
 
+
+
 // insta liek story section 
 /* ---------- DATA ---------- */
 /* Replace images with yours */
@@ -295,7 +297,99 @@ channel:"Star Jalsha",
 serial:"DUI SALIKH(2024)",
 character:"Hero's Sister",
 casted:"SFTS"
+},
+
+{
+name:"Lead Hero",
+role:"Lead Hero",
+img:"../assets/resized images/Untitled design (21).png",
+channel:"Star Jalsha",
+serial:"KAPAL KUNDALA(2019)",
+character:"Lead Hero",
+casted:"SFTS [Neelabjya]"
+},
+
+{
+name:"Sushrita Ghose",
+role:"Lead Heroine",
+img:"../assets/resized images/Untitled design (22).png",
+channel:"Sun bangla",
+serial:"SUNDORI(2021)",
+character:"Lead Heroine",
+casted:"SFTS [Neelabjya]"
+},
+
+{
+name:"Swagata Sen",
+role:" Lead Heroine",
+img:"../assets/resized images/Untitled design (23).png",
+channel:"Akash Aath",
+serial:"NOTI BINODINI(2019)",
+character:" Lead Heroine",
+casted:"SFTS "
+},
+
+{
+name:"Sayantaan Shaan Sarkar",
+role:"One the the Lead Hero",
+img:"../assets/resized images/Untitled design (24).png",
+channel:"Sun bangla",
+serial:"MOM PALOK(2021)",
+character:"One the the Lead Hero",
+casted:"SFTS"
+},
+
+{
+name:"Priyanka Banerjee",
+role:"One of the Lead",
+img:"../assets/resized images/Untitled design (25).png",
+channel:"Star Jalsha",
+serial:"KOTHA(2023)",
+character:"One of the Lead",
+casted:"SFTS"
+},
+
+{
+name:"Somu Sarkar",
+role:"Lead heroine",
+img:"../assets/resized images/Untitled design (26).png",
+channel:"Star Jalsha",
+serial:"GODHULI ALAP (2022)",
+character:"Lead heroine",
+casted:"SFTS [Neelabjya]"
+},
+
+{
+name:"Ritobrota Dey",
+role:"One of the Lead",
+img:"../assets/resized images/Untitled design (27).png",
+channel:"Sun Bangla",
+serial:"KANNA DAN(2020)",
+character:"one of the Lead",
+casted:"SFTS [Neelabjya]"
+},
+
+{
+name:"Indrani Paul",
+role:"Lead Heroine",
+img:"../assets/resized images/Untitled design (28).png",
+channel:"Star Jalsha",
+serial:"BORON(2021)",
+character:"Lead Heroine",
+casted:"SFTS [Neelabjya]"
+},
+
+{
+name:"Ratnapriya Das",
+role:"Lead Heroine Female",
+img:"../assets/resized images/Untitled design (29).png",
+channel:"Star Jalsha",
+serial:"URAN(2023)",
+character:"Lead Heroine Female",
+casted:"SFTS [Neelabjya]"
 }
+
+
 
 ];
 
@@ -396,94 +490,155 @@ startAuto();
 
 
 
+// dragable story circle section 
+// ---------- DRAGGABLE STORY BAR ----------
+
+(function () {
+
+  const bar = document.getElementById("storyBar");
+  if (!bar) return;
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  bar.addEventListener("mousedown", (e) => {
+
+    e.preventDefault();
+
+    isDown = true;
+    startX = e.pageX - bar.offsetLeft;
+    scrollLeft = bar.scrollLeft;
+    bar.style.cursor = "grabbing";
+  });
+
+  bar.addEventListener("mouseleave", () => {
+    isDown = false;
+    bar.style.cursor = "grab";
+  });
+
+  bar.addEventListener("mouseup", () => {
+    isDown = false;
+    bar.style.cursor = "grab";
+  });
+
+  bar.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+
+    e.preventDefault();
+
+    const x = e.pageX - bar.offsetLeft;
+    const walk = (x - startX) * 1.5;
+
+    bar.scrollLeft = scrollLeft - walk;
+  });
+
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 // form handling using nodemailer
-const enquiryForm = document.getElementById("enquiryForm");
-const submitBtn = enquiryForm.querySelector("button");
 
-let cooldown = false;
+// const enquiryForm = document.getElementById("enquiryForm");
+// const submitBtn = enquiryForm.querySelector("button");
 
-if (enquiryForm) {
+// let cooldown = false;
 
-  enquiryForm.addEventListener("submit", async function (e) {
+// if (enquiryForm) {
 
-    e.preventDefault();
+//   enquiryForm.addEventListener("submit", async function (e) {
 
-    if (cooldown) return;
+//     e.preventDefault();
 
-    const data = {
-      name: document.getElementById("formName").value,
-      email: document.getElementById("formEmail").value,
-      phone: document.getElementById("formPhone").value,
-      message: document.getElementById("formMessage").value
-    };
+//     if (cooldown) return;
 
-    try {
+//     const data = {
+//       name: document.getElementById("formName").value,
+//       email: document.getElementById("formEmail").value,
+//       phone: document.getElementById("formPhone").value,
+//       message: document.getElementById("formMessage").value
+//     };
 
-      const res = await fetch("https://node-mailer-x4er.onrender.com/send-mail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
+//     try {
 
-      const result = await res.json();
+//       const res = await fetch("https://node-mailer-x4er.onrender.com/send-mail", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify(data)
+//       });
 
-      if (result.success) {
+//       const result = await res.json();
 
-        alert("Message sent successfully!");
-        enquiryForm.reset();
+//       if (result.success) {
 
-        startCooldown();
+//         alert("Message sent successfully!");
+//         enquiryForm.reset();
 
-      } else {
+//         startCooldown();
 
-        alert(result.message || "Failed to send message.");
+//       } else {
 
-      }
+//         alert(result.message || "Failed to send message.");
 
-    } catch (error) {
+//       }
 
-      console.error(error);
-      alert("Server error.");
+//     } catch (error) {
 
-    }
+//       console.error(error);
+//       alert("Server error.");
 
-  });
+//     }
 
-}
+//   });
 
-function startCooldown() {
+// }
 
-  cooldown = true;
+// function startCooldown() {
 
-  let timeLeft = 30;
+//   cooldown = true;
 
-  submitBtn.disabled = true;
+//   let timeLeft = 30;
 
-  submitBtn.textContent = `Wait ${timeLeft}s`;
+//   submitBtn.disabled = true;
 
-  const timer = setInterval(() => {
+//   submitBtn.textContent = `Wait ${timeLeft}s`;
 
-    timeLeft--;
+//   const timer = setInterval(() => {
 
-    submitBtn.textContent = `Wait ${timeLeft}s`;
+//     timeLeft--;
 
-    if (timeLeft <= 0) {
+//     submitBtn.textContent = `Wait ${timeLeft}s`;
 
-      clearInterval(timer);
+//     if (timeLeft <= 0) {
 
-      submitBtn.disabled = false;
+//       clearInterval(timer);
 
-      submitBtn.textContent = "Send Enquiry";
+//       submitBtn.disabled = false;
 
-      cooldown = false;
+//       submitBtn.textContent = "Send Enquiry";
 
-    }
+//       cooldown = false;
 
-  }, 1000);
+//     }
 
-}
+//   }, 1000);
+
+// }

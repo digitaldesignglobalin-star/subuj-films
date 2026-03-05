@@ -674,11 +674,54 @@ display:flex;
 gap:16px;
 overflow-x:auto;
 padding:15px 0;
-justify-content:center;
 scrollbar-width:none;
+cursor: grab;
+
 }
 
-.story-bar::-webkit-scrollbar{ display:none; }
+
+/* Disable selection everywhere inside stories */
+
+.story-bar,
+.story-bar * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+/* Disable image dragging */
+
+.story img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* Drag cursor */
+
+.story-bar {
+  cursor: grab;
+}
+
+.story-bar:active {
+  cursor: grabbing;
+}
+
+
+.story img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.story-bar::-webkit-scrollbar{
+display:none;
+}
+
+.story-bar:active{
+cursor: grabbing;
+}
+
+
 
 .story{
 width:100px;
