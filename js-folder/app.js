@@ -239,13 +239,13 @@ document.querySelectorAll('.slider-wrapper').forEach((slider) => {
 const users = [
 
 {
-name:"Promith Chatterjee",
-role:"Negative Lead character",
-img:"../assets/resized images/Untitled design (19).png",
-channel:"Zee Bangla",
-serial:"ANANDI(2026)",
-character:"Negative Lead character",
-casted:"SFTS [Arpita]"
+name:"Aratrika Maity",
+role:"Lead Heroine",
+img:"../assets/resized images/img-1.png",
+channel:"Sun bangla",
+serial:"AGNI SHIKHA(2021)",
+character:"Lead Heroine",
+casted:"SFTS [Neelabjya]"
 },
 
 {
@@ -269,21 +269,21 @@ casted:"SFTS [Arpita]"
 },
 
 {
-name:"Priya Sharma",
+name:"Subha Ranjan Mukherjee",
 role:"Lead Heroine",
 img:"../assets/resized images/Untitled design (15).png",
-channel:"Sony",
-serial:"Code World",
+channel:"Sun Bangla",
+serial:"SOHAGE ADORE(2025)",
 character:"Lead Heroine",
-casted:"Dream Casting"
+casted:"SFTS [Arpita]"
 },
 {
-name:"Ratnapriya Das",
-role:"Lead Heroine Female",
+name:"Manisha Mandal",
+role:" Lead Heroine",
 img:"../assets/resized images/Untitled design (18).png",
 channel:"Star Jalsha",
-serial:"URAN(2023)",
-character:"Lead Heroine Female",
+serial:"Rangamati Tirandaj(2024)",
+character:" Lead Heroine",
 casted:" SFTS [Neelabjya]"
 },
 
@@ -391,3 +391,99 @@ startAuto();
 
 startAuto();
 
+
+
+
+
+
+
+
+
+// form handling using nodemailer
+const enquiryForm = document.getElementById("enquiryForm");
+const submitBtn = enquiryForm.querySelector("button");
+
+let cooldown = false;
+
+if (enquiryForm) {
+
+  enquiryForm.addEventListener("submit", async function (e) {
+
+    e.preventDefault();
+
+    if (cooldown) return;
+
+    const data = {
+      name: document.getElementById("formName").value,
+      email: document.getElementById("formEmail").value,
+      phone: document.getElementById("formPhone").value,
+      message: document.getElementById("formMessage").value
+    };
+
+    try {
+
+      const res = await fetch("https://node-mailer-x4er.onrender.com/send-mail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+
+        alert("Message sent successfully!");
+        enquiryForm.reset();
+
+        startCooldown();
+
+      } else {
+
+        alert(result.message || "Failed to send message.");
+
+      }
+
+    } catch (error) {
+
+      console.error(error);
+      alert("Server error.");
+
+    }
+
+  });
+
+}
+
+function startCooldown() {
+
+  cooldown = true;
+
+  let timeLeft = 30;
+
+  submitBtn.disabled = true;
+
+  submitBtn.textContent = `Wait ${timeLeft}s`;
+
+  const timer = setInterval(() => {
+
+    timeLeft--;
+
+    submitBtn.textContent = `Wait ${timeLeft}s`;
+
+    if (timeLeft <= 0) {
+
+      clearInterval(timer);
+
+      submitBtn.disabled = false;
+
+      submitBtn.textContent = "Send Enquiry";
+
+      cooldown = false;
+
+    }
+
+  }, 1000);
+
+}

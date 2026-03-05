@@ -577,70 +577,59 @@
 
     <!-- Contact Modal -->
     <!-- Modal -->
-   <div class="modal fade custom-modal" id="enquiryModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content custom-modal-box">
+    <div class="modal fade custom-modal" id="enquiryModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-modal-box">
+          <div class="modal-header custom-header">
+            <h5 style="color: white">Get in Touch</h5>
 
-      <div class="modal-header custom-header">
-        <h5 style="color: white;">Get in Touch</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              id="modalCloseBtn"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
 
-        <button
-          type="button"
-          class="btn-close btn-close-white"
-          id="modalCloseBtn"
-          data-bs-dismiss="modal"
-        ></button>
+          <div class="modal-body">
+            <p class="modal-sub">
+              Tell us about your project and we will contact you.
+            </p>
+
+            <form id="enquiryForm" class="modal-form">
+              <input
+                type="text"
+                name="name"
+                id="formName"
+                placeholder="Your Name"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                id="formEmail"
+                placeholder="Email Address"
+                required
+              />
+              <input
+                type="text"
+                name="phone"
+                id="formPhone"
+                placeholder="Contact Number"
+                required
+              />
+              <textarea
+                name="message"
+                id="formMessage"
+                placeholder="Your Message"
+              ></textarea>
+
+              <button type="submit" class="modal-btn">Send Enquiry</button>
+            </form>
+          </div>
+        </div>
       </div>
-
-      <div class="modal-body">
-
-        <p class="modal-sub">
-          Tell us about your project and we will contact you.
-        </p>
-
-        <form id="enquiryForm" class="modal-form">
-
-  <input
-    type="text"
-    name="name"
-    id="name"
-    placeholder="Your Name"
-    required
-  />
-
-  <input
-    type="email"
-    name="email"
-    id="email"
-    placeholder="Email Address"
-    required
-  />
-
-  <input
-    type="text"
-    name="phone"
-    id="phone"
-    placeholder="Contact Number"
-    required
-  />
-
-  <textarea
-    name="message"
-    id="message"
-    placeholder="Your Message"
-  ></textarea>
-
-  <button type="submit" class="modal-btn">
-    Send Enquiry
-  </button>
-
-</form>
-
-      </div>
-
     </div>
-  </div>
-</div>
 
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="js-folder/modal.js"></script>
