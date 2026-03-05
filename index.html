@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOBUJ</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/android-chrome-512x512.png"
+    />
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./css-folder/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark fixed-top custom-navbar">
+      <div class="container d-flex align-items-center justify-content-between">
+        <!-- <a class="navbar-brand" href="./index.html">NINE<span>STUDIO</span></a> -->
+
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="assets/logo_2-removebg-preview.png"
+            alt="Sobuj Films & Television Studio Logo"
+            class="navbar-logo"
+          />
+        </a>
+
+        <!-- DESKTOP MENU -->
+        <ul class="desktop-menu">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="./placement.html">Placement</a></li>
+          <li><a href="./gallery.html">Gallery</a></li>
+          <li><a href="./contact.html" class="desktop-contact">Contact</a></li>
+        </ul>
+
+        <!-- HAMBURGER (MOBILE) -->
+        <button class="navbar-toggler hamburger" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div class="offcanvas-overlay" id="offcanvasOverlay"></div>
+
+    <!-- FULLSCREEN MOBILE MENU -->
+    <nav class="side-nav" id="sideNav">
+      <button class="close-btn" id="closeNav">&times;</button>
+
+      <div class="menu-content">
+        <ul class="menu-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Placement</a></li>
+          <li><a href="#">Gallery</a></li>
+        </ul>
+
+        <a href="./contact.html" class="menu-contact">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-subtitle">We Create Stories</span>
+            <!-- <h1 class="hero-title">A film production & creative studio</h1>
+            <p class="hero-description">
+              We are a passionate team of filmmakers, storytellers, and
+              creatives dedicated to bringing your vision to life.
+            </p> -->
+            <div class="hero-buttons">
+              <a href="#" class="btn btn-primary-custom">Our Portfolio</a>
+              <!-- <a href="#" class="btn btn-outline-light-custom"
+                >Watch Showreel</a
+              > -->
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <a href="#service-slider" class="hero-scroll-mouse">
+            <div class="mouse"></div>
+            <p>SCROLL</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- insta like story section  -->
+
+      <section class="team-stories py-5">
+        <div class="container text-center">
+          <!-- STORIES -->
+          <div class="story-bar" id="storyBar"></div>
+
+          <!-- PROFILE -->
+          <div class="profile-wrapper mt-4">
+            <button class="arrow left" onclick="prev()">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <img id="bigImg" class="big-img" />
+
+            <div class="profile-info text-start mt-3 mt-md-0">
+              <h3 id="name"></h3>
+              <p id="role"></p>
+
+              <div class="extra-info mt-2">
+                <div><strong>Channel:</strong> <span id="channel"></span></div>
+                <div><strong>Serial:</strong> <span id="serial"></span></div>
+                <div><strong>Role:</strong> <span id="character"></span></div>
+                <div><strong>Casted by:</strong> <span id="casted"></span></div>
+              </div>
+              <!-- <button class="btn btn-danger px-4">VIEW DETAILS</button> -->
+            </div>
+
+            <button class="arrow right" onclick="next()">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDING SERVICES SECTION -->
+      <section class="services-slider" id="service-slider">
+        <div class="container">
+          <div class="services-header">
+            <h2>What We Offer</h2>
+            <p>Creative services crafted to tell powerful visual stories.</p>
+          </div>
+
+          <div class="slider-wrapper">
+            <div class="slider-track">
+              <!-- Slide 1 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-4.jpeg" alt="" />
+                <h4>Film Production</h4>
+                <p>End-to-end cinematic film production.</p>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-11.jpeg" alt="" />
+                <h4>Video Editing</h4>
+                <p>High-impact editing for digital & film.</p>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-10.jpeg" alt="" />
+                <h4>Cinematography</h4>
+                <p>Visually striking camera work.</p>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-5.jpeg" alt="" />
+                <h4>Post Production</h4>
+                <p>Color grading, sound & finishing.</p>
+              </div>
+
+              <!-- DUPLICATE SLIDES FOR INFINITY LOOP -->
+              <!-- Slide 1 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-4.jpeg" alt="" />
+                <h4>Film Production</h4>
+                <p>End-to-end cinematic film production.</p>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-11.jpeg" alt="" />
+                <h4>Video Editing</h4>
+                <p>High-impact editing for digital & film.</p>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-10.jpeg" alt="" />
+                <h4>Cinematography</h4>
+                <p>Visually striking camera work.</p>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-5.jpeg" alt="" />
+                <h4>Post Production</h4>
+                <p>Color grading, sound & finishing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDING SERVICES SECTION (REVERSE) -->
+      <section class="services-slider reverse">
+        <div class="container">
+          <div class="services-header">
+            <h2>Our Expertise</h2>
+            <p>Crafted solutions for brands that want to stand out.</p>
+          </div>
+
+          <div class="slider-wrapper">
+            <div class="slider-track reverse-track">
+              <!-- Slide 1 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-9.jpeg" alt="" />
+                <h4>Brand Films</h4>
+                <p>Story-driven films for modern brands.</p>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-19.jpeg" alt="" />
+                <h4>Commercial Ads</h4>
+                <p>High-conversion visual advertising.</p>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-7.jpeg" alt="" />
+                <h4>Music Videos</h4>
+                <p>Creative visuals for artists & labels.</p>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-12.jpeg" alt="" />
+                <h4>Documentaries</h4>
+                <p>Authentic storytelling with impact.</p>
+              </div>
+
+              <!-- Slide 1 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-9.jpeg" alt="" />
+                <h4>Brand Films</h4>
+                <p>Story-driven films for modern brands.</p>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-19.jpeg" alt="" />
+                <h4>Commercial Ads</h4>
+                <p>High-conversion visual advertising.</p>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-7.jpeg" alt="" />
+                <h4>Music Videos</h4>
+                <p>Creative visuals for artists & labels.</p>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="service-slide">
+                <img src="./assets/compressedImages/image-12.jpeg" alt="" />
+                <h4>Documentaries</h4>
+                <p>Authentic storytelling with impact.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMAGE MOSAIC SECTION -->
+      <section class="image-mosaic">
+        <div class="container">
+          <div class="mosaic-header">
+            <h2>Our Work in Frames</h2>
+            <p>Moments crafted with precision, emotion, and cinematic depth.</p>
+          </div>
+
+          <div class="mosaic-grid">
+            <!-- Large Image -->
+            <div class="mosaic-item large">
+              <img src="./assets/compressedImages/image-1.jpeg" alt="" />
+              <div class="overlay">
+                <h4>Feature Films</h4>
+              </div>
+            </div>
+
+            <!-- Small Images -->
+            <div class="mosaic-item">
+              <img src="./assets/compressedImages/image-4.jpeg" alt="" />
+              <div class="overlay">
+                <h4>Commercials</h4>
+              </div>
+            </div>
+
+            <div class="mosaic-item">
+              <img src="./assets/compressedImages/image-3.jpeg" alt="" />
+              <div class="overlay">
+                <h4>Brand Stories</h4>
+              </div>
+            </div>
+
+            <!-- <div class="mosaic-item">
+        <img src="https://images.unsplash.com/photo-1515165562835-c3b8d87d7c9b" alt="">
+        <div class="overlay">
+          <h4>Music Videos</h4>
+        </div>
+      </div> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- IMAGE TO VIDEO HOVER SECTION -->
+      <section class="hover-video-section">
+        <div class="container">
+          <div class="hover-video-header">
+            <h2>Motion in Every Frame</h2>
+            <p>Hover to experience our work in motion.</p>
+          </div>
+
+          <div class="hover-video-grid">
+            <!-- Card 1 -->
+            <div class="hover-video-card">
+              <img
+                src="https://images.unsplash.com/photo-1485846234645-a62644f84728"
+                alt=""
+              />
+              <video muted loop preload="metadata">
+                <source
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <span>Brand Films</span>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="hover-video-card">
+              <img
+                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+                alt=""
+              />
+              <video muted loop preload="metadata">
+                <source
+                  src="https://www.w3schools.com/html/movie.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <span>Commercial Ads</span>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="hover-video-card">
+              <img
+                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+                alt=""
+              />
+              <video muted loop preload="metadata">
+                <source
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <span>Music Videos</span>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="hover-video-card">
+              <img
+                src="https://images.unsplash.com/photo-1485846234645-a62644f84728"
+                alt=""
+              />
+              <video muted loop preload="metadata">
+                <source
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <span>Brand Films</span>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="hover-video-card">
+              <img
+                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+                alt=""
+              />
+              <video muted loop preload="metadata">
+                <source
+                  src="https://www.w3schools.com/html/movie.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <span>Commercial Ads</span>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="hover-video-card">
+              <img
+                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+                alt=""
+              />
+              <video muted loop preload="metadata">
+                <source
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <span>Music Videos</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEACHING SECTION -->
+      <section class="teaching-section">
+        <div class="teaching-overlay"></div>
+
+        <div class="container teaching-layout">
+          <!-- LEFT CONTENT (UNCHANGED) -->
+          <div class="teaching-content">
+            <span class="teaching-eyebrow">Education</span>
+
+            <h2>We teach what we create</h2>
+
+            <p>
+              Beyond production, we mentor aspiring filmmakers and creatives in
+              cinematography, direction, editing, and visual storytelling —
+              sharing real-world experience from behind the lens.
+            </p>
+
+            <a href="#" class="teaching-btn">Explore Workshops</a>
+          </div>
+
+          <!-- RIGHT CARDS SLIDER (ADDED) -->
+          <div class="teaching-slider">
+            <div class="slider-track">
+              <div class="teaching-card">
+                <img src="./assets/compressedImages/image-17.jpeg" />
+                <span>Cinematography</span>
+              </div>
+
+              <div class="teaching-card">
+                <img src="./assets/compressedImages/image-18.jpeg" />
+                <span>Direction</span>
+              </div>
+
+              <div class="teaching-card">
+                <img src="./assets/compressedImages/image-19.jpeg" />
+                <span>Editing</span>
+              </div>
+
+              <div class="teaching-card">
+                <img src="./assets/compressedImages/image-20.jpeg" />
+                <span>Storytelling</span>
+              </div>
+
+              <!-- duplicate for seamless loop -->
+              <div class="teaching-card">
+                <img src="./assets/compressedImages/image-17.jpeg" />
+                <span>Cinematography</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA SECTION -->
+      <section class="final-cta">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Let’s Create Something Meaningful</h2>
+            <p>
+              Whether it’s a brand film, commercial, or a visual story — we
+              bring ideas to life with precision and purpose.
+            </p>
+
+            <a href="#" class="cta-btn">Start a Project</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/917003379574?text=Hello%20I%20would%20like%20to%20book%20an%20Ayurveda%20consultation"
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <!-- Brand -->
+        <div class="footer-brand-centered">
+          <!-- <a href="index.html" class="footer-logo-link">
+            <h2>NINE<span>STUDIO</span></h2>
+          </a> -->
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="assets/logo_2-removebg-preview.png"
+              alt="Sobuj Films & Television Studio Logo"
+              class="footer-logo"
+            />
+          </a>
+
+          <p>
+            A creative film production studio crafting cinematic stories with
+            emotion, precision, and purpose.
+          </p>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-contact-centered">
+          <p>
+            Email:
+            <a href="mailto:Sobujfilmsandtelevisionstudio@gmail.com"
+              >Sobujfilmsandtelevisionstudio@gmail.com</a
+            >
+          </p>
+
+          <p>
+            <strong>Phone:</strong>
+            <a href="tel:+917003379574">+91 70033 79574</a>, <br />
+            <a style="margin-left: 45px" href="tel:+918918369578"
+              >+91 89183 69578</a
+            >
+          </p>
+
+          <p>
+            Address:
+            <a
+              href="https://www.google.com/maps/place/Sobuj+Films+%26+Television+Studio/@22.4849484,88.3363749,17z/data=!4m14!1m7!3m6!1s0x3a02710025c06d01:0xdf983659ba85a15b!2sSobuj+Films+%26+Television+Studio!8m2!3d22.4849101!4d88.3363674!16s%2Fg%2F11xnsm11b7!3m5!1s0x3a02710025c06d01:0xdf983659ba85a15b!8m2!3d22.4849101!4d88.3363674!16s%2Fg%2F11xnsm11b7?hl=en&entry=ttu&g_ep=EgoyMDI2MDIyNC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tollygunge Karunamoye Ghat Road, Dhara Para More,
+              <br />
+              166 Shuvam Apartment, Kolkata - 700082
+            </a>
+          </p>
+
+          <div class="footer-socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-vimeo-v"></i></a>
+          </div>
+        </div>
+
+        <div class="terms-and-policy">
+          <ul>
+            <li>
+              <a href="terms.html">Terms & Conditions</a>
+            </li>
+            <li><a href="policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+          <p>© 2025 SOBUJ Studio. All rights reserved.</p>
+          <span
+            >Proudly desiged and developed ❤️ by
+            <a target="_blank" href="https://designglobal.in/"
+              >Design Global Technology</a
+            ></span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <!-- Modal -->
+   <div class="modal fade custom-modal" id="enquiryModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content custom-modal-box">
+
+      <div class="modal-header custom-header">
+        <h5 style="color: white;">Get in Touch</h5>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          id="modalCloseBtn"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+
+        <p class="modal-sub">
+          Tell us about your project and we will contact you.
+        </p>
+
+        <form id="enquiryForm" class="modal-form">
+
+  <input
+    type="text"
+    name="name"
+    id="name"
+    placeholder="Your Name"
+    required
+  />
+
+  <input
+    type="email"
+    name="email"
+    id="email"
+    placeholder="Email Address"
+    required
+  />
+
+  <input
+    type="text"
+    name="phone"
+    id="phone"
+    placeholder="Contact Number"
+    required
+  />
+
+  <textarea
+    name="message"
+    id="message"
+    placeholder="Your Message"
+  ></textarea>
+
+  <button type="submit" class="modal-btn">
+    Send Enquiry
+  </button>
+
+</form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js-folder/modal.js"></script>
+    <!-- <script src="./js-folder/lenis.min.js"></script> -->
+    <script src="./js-folder/app.js"></script>
+  </body>
+</html>
