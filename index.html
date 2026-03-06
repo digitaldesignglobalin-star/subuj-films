@@ -1,3 +1,9 @@
+<?php
+$num1 = rand(1,10);
+$num2 = rand(1,10);
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -196,8 +202,6 @@
                 <h4>Post Production</h4>
                 <p>Color grading, sound & finishing.</p>
               </div>
-
-              
             </div>
           </div>
         </div>
@@ -487,8 +491,9 @@
     </main>
 
     <!-- Floating WhatsApp Button -->
+          
     <a
-      href="https://wa.me/917003379574?text=Hello%20I%20would%20like%20to%20book%20an%20Ayurveda%20consultation"
+      href="https://wa.me/918918369578?text=Hello,%20I’d%20would%20like%20to%20inquire%20about%20film%20production%20services."
       class="whatsapp-float"
       target="_blank"
       aria-label="Chat on WhatsApp"
@@ -598,36 +603,72 @@
               Tell us about your project and we will contact you.
             </p>
 
-            <form id="enquiryForm" class="modal-form">
-              <input
-                type="text"
-                name="name"
-                id="formName"
-                placeholder="Your Name"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                id="formEmail"
-                placeholder="Email Address"
-                required
-              />
-              <input
-                type="text"
-                name="phone"
-                id="formPhone"
-                placeholder="Contact Number"
-                required
-              />
-              <textarea
-                name="message"
-                id="formMessage"
-                placeholder="Your Message"
-              ></textarea>
+            <form
+id="enquiryForm"
+action="./mailer.php"
+method="POST"
+class="modal-form"
+enctype="multipart/form-data"
+>
 
-              <button type="submit" class="modal-btn">Send Enquiry</button>
-            </form>
+<input type="hidden" name="form_type" value="modal">
+
+<div class="row g-3">
+
+<div class="col-md-6">
+<input type="text" name="name" placeholder="Your Name" required>
+</div>
+
+<div class="col-md-6">
+<input type="email" name="email" placeholder="Email Address" required>
+</div>
+
+<div class="col-md-6" style="margin-top: 0px;">
+<input type="text" name="mobile" placeholder="Contact Number" required>
+</div>
+
+<div class="col-md-6" style="margin-top: 0px;">
+<input type="number" name="age" placeholder="Age" required>
+</div>
+
+<div class="col-md-6" style="margin-top: 0px;">
+<input type="text" name="height" placeholder="Height (cm)" required>
+</div>
+
+<div class="col-md-6" style="margin-top: 0px;">
+<input type="text" name="weight" placeholder="Weight (kg)" required>
+</div>
+
+<div class="col-md-6" style="margin-top: 0px;">
+<input type="text" name="education" placeholder="Education Qualification" required>
+</div>
+
+<div class="col-md-6" style="margin-top: 0px;">
+<input type="file" name="cv" accept=".pdf,.doc,.docx">
+</div>
+
+<div class="col-12" style="margin-top: 0px;">
+<textarea name="message" placeholder="Your Message"></textarea>
+</div>
+
+<!-- <div class="col-md-6">
+<input type="hidden" name="num1" value="<?php echo $num1; ?>">
+<input type="hidden" name="num2" value="<?php echo $num2; ?>">
+
+<input
+type="text"
+name="captcha"
+placeholder="What is <?php echo $num1; ?> + <?php echo $num2; ?> ?"
+required
+>
+</div> -->
+
+<div class="col-12" style="margin-top: 0px;">
+<button type="submit" class="modal-btn">Send Enquiry</button>
+</div>
+
+</div>
+</form>
           </div>
         </div>
       </div>

@@ -255,7 +255,7 @@ name:"Chirag",
 role:" Child Lead - Character : Chirag",
 img:"../assets/resized images/Untitled design (14).png",
 channel:"Zee Bangla",
-serial:"BESH KORECHI PREM",
+serial:" BESH KORECHI PREM KORECHI(2026)",
 character:"Child Lead - Character : Chirag",
 casted:"SFTS [Arpita]"
 },
@@ -272,11 +272,11 @@ casted:"SFTS [Arpita]"
 
 {
 name:"Subha Ranjan Mukherjee",
-role:"Lead Heroine",
+role:"Lead Hero",
 img:"../assets/resized images/Untitled design (15).png",
 channel:"Sun Bangla",
 serial:"SOHAGE ADORE(2025)",
-character:"Lead Heroine",
+character:"Lead Hero",
 casted:"SFTS [Arpita]"
 },
 {
